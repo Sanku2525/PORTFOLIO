@@ -1,0 +1,251 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #1f242d;
+    color: white;
+}
+a {
+    color: white;
+    text-decoration: none;
+}
+.navbar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 15px 9%;
+    background: rgb(103, 89, 198);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    animation: show-content 1.5s linear forwards;
+    animation-delay: 1.6s;
+    z-index: 100;
+}
+
+.navbar .logo {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.navbar ul {
+    display: flex;
+}
+
+.navbar ul li {
+    list-style: none;
+    margin-left: 35px;
+}
+
+.navbar ul li a {
+    font-size: 20px;
+    font-weight: 500;
+    transition: 0.5s;
+}
+
+.navbar ul li:hover a,
+.navbar ul li.active a {
+    color: rgb(54, 204, 154);
+}
+@keyframes show-content {
+    100% {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+.home {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    visibility: hidden;
+    opacity: 0;
+    gap: 50px;
+    animation: show-content 1.5s linear forwards;
+    animation-delay: 1.2s;
+    padding: 60px 9% 0;
+    color: white;
+}
+
+.home-info h1 {
+    font-size: 55px;
+}
+
+.home-info h2 {
+    font-size: 32px;
+    margin-top: -10px;
+}
+
+.home-info p {
+    font-size: 16px;
+    margin: 10px 0 25px;
+}
+
+.home-info .btn-sci {
+    display: flex;
+    align-items: center;
+}
+.btn {
+    display: inline-block;
+    padding: 10px 30px;
+    background: #b982e0;
+    font-weight: 600;
+    font-size: 16px;
+    color: #1f242d;
+    border: 2px solid #b982e0;
+    border-radius: 40px;
+    box-shadow: 0 0 10px #b982e0;
+    transition: 0.5s;
+}
+
+.btn:hover {
+    background: transparent;
+    color: #b982e0;
+    box-shadow: none;
+}
+.home-info .btn-sci .sci {
+    margin-left: 20px;
+}
+
+.home-info .btn-sci .sci a {
+    display: inline-flex;
+    padding: 8px;
+    transition: 0.5s;
+    border: 2px solid #b982e0;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #b982e0;
+    margin: 0 8px;
+}
+
+.home-info .btn-sci .sci a:hover {
+    background: #b982e0;
+    color: #1f242d;
+    box-shadow: 0 0 10px #b982e0;
+}
+.home-img .img-box {
+    width: 32vw;
+    height: 32vw;
+    justify-content: center;
+    background: red;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    border-radius: 50%;
+    padding: 5px;
+    align-items: center;
+}
+
+.home-img .img-box::before,
+.home-img .img-box::after {
+    content: "";
+    position: absolute;
+    background: conic-gradient(transparent, transparent, transparent, #b982e0);
+    width: 500px;
+    height: 500px;
+    transform: rotate(0deg);
+    animation: rotate-border 10s linear infinite;
+}
+
+@keyframes rotate-border {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.home-img .img-box .img-item {
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border: 0.1px solid #1f242d;
+    display: flex;
+    z-index: 1;
+    overflow: hidden;
+    background: #1f242d;
+    border-radius: 50%;
+}
+
+.home-img .img-box .img-item img {
+    position: absolute;
+    display: block;
+    width: 85%;
+    object-fit: cover;
+    top: 30px;
+    mix-blend-mode: lighten;
+}
+.bars-animation {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    z-index: -1;
+}
+
+.bars-animation .bar {
+    width: 100%;
+    height: 100%;
+    background: #1f242d;
+    border: 2px solid red;
+    transform: translateY(-100%);
+    animation: show-bars 0.5s ease-in-out forwards;
+    animation-delay: calc(0.1s * var(--i));
+}
+
+@keyframes show-bars {
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: orangered;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: black;
+    width: 50px;
+}
+.contact-form h2 {
+    text-align: center;
+    margin-top: 3em;
+    margin-bottom: 1em;
+    font-size: 36px;
+}
+
+.contact-form form {
+    max-width: 50em;
+    margin: 1rem auto;
+    text-align: center;
+    margin-bottom: 3em;
+}
+
+.contact-form form .input-box {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.contact-form form .input-box input,
+.contact-form form textarea {
+    padding: 1.5em;
+    width: 100%;
+    font-size: 18px;
+    color: black;
+    background: rgb(253, 248, 248);
+    border-radius: 0.8rem;
+    margin: 1rem 0;
+    resize: none;
+    border: 2px solid transparent;
+}
